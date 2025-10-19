@@ -1,11 +1,9 @@
 :root {
-  /* Colors from the common Blog Preview Card challenge style‑guide */
   --yellow: hsl(47, 88%, 63%);
   --gray-500: hsl(0, 0%, 42%);
   --gray-950: hsl(0, 0%, 7%);
   --white: #fff;
 
-  /* Typography */
   --font: "Figtree", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
     Cantarell, "Noto Sans", Helvetica, Arial, "Apple Color Emoji",
     "Segoe UI Emoji";
@@ -47,12 +45,11 @@ body {
   gap: 16px;
 }
 
-/* Illustration */
 .thumb {
   border-radius: 10px;
   border: var(--border);
   overflow: hidden;
-  line-height: 0; /* remove gap under inline images */
+  line-height: 0;
 }
 
 .thumb svg,
@@ -126,20 +123,11 @@ body {
   font-size: 14px;
 }
 
-/* Focus styles */
 :focus-visible {
   outline: 3px dashed var(--gray-950);
   outline-offset: 3px;
 }
 
-/* Motion‑safe improvements */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
-  }
-}
-
-/* Small viewport adjustments */
 @media (max-width: 360px) {
   .card {
     padding: 20px;
