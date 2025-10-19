@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog preview card</title>
+    <!-- Figtree per style‑guide -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <article class="card" aria-labelledby="post-title">
+      <div class="thumb" aria-hidden="true">
+        <!-- Inline SVG illustration as a placeholder so the file works without external assets. 
+           Replace this <svg> with the provided starter image if desired. -->
+        <svg
+          viewBox="0 0 576 300"
+          xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-label="Abstract article illustration"
+        >
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ffe08a" />
+              <stop offset="1" stop-color="#ffd24d" />
+            </linearGradient>
+          </defs>
+          <rect width="576" height="300" fill="url(#g)" />
+          <g fill="none" stroke="#111" stroke-width="6" opacity="0.4">
+            <rect x="28" y="28" width="220" height="120" rx="16" />
+            <rect x="260" y="28" width="288" height="120" rx="16" />
+            <rect x="28" y="164" width="520" height="108" rx="16" />
+            <path
+              d="M260 88h140M260 112h220M260 64h100"
+              stroke-linecap="round"
+            />
+          </g>
+        </svg>
+      </div>
+
+      <div class="stack">
+        <span class="pill">Learning</span>
+        <p class="meta">Published 21 Dec 2023</p>
+        <h1 class="title" id="post-title">
+          <a href="#" aria-describedby="post-desc"
+            >HTML &amp; CSS foundations</a
+          >
+        </h1>
+        <p class="desc" id="post-desc">
+          These languages are the backbone of every website, defining structure,
+          content, and presentation.
+        </p>
+      </div>
+
+      <div class="author">
+        <img
+          class="author-avatar"
+          src="assets/image-avatar.webp"
+          alt="Photo of Greg Hooper"
+        />
+        <span class="author-name">Greg Hooper</span>
+      </div>
+    </article>
+  </body>
+</html>

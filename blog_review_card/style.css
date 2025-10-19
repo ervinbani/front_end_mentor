@@ -1,0 +1,147 @@
+:root {
+  /* Colors from the common Blog Preview Card challenge style‑guide */
+  --yellow: hsl(47, 88%, 63%);
+  --gray-500: hsl(0, 0%, 42%);
+  --gray-950: hsl(0, 0%, 7%);
+  --white: #fff;
+
+  /* Typography */
+  --font: "Figtree", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+    Cantarell, "Noto Sans", Helvetica, Arial, "Apple Color Emoji",
+    "Segoe UI Emoji";
+  --fs-body: 16px;
+  --fs-title: clamp(1.25rem, 1.1rem + 1vw, 1.5rem);
+  --fs-meta: 14px;
+  --radius: 20px;
+  --shadow-offset: 8px;
+  --shadow-color: var(--gray-950);
+  --border: 1px solid var(--gray-950);
+  --transition: 180ms ease;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  background: var(--yellow);
+  color: var(--gray-950);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.card {
+  width: min(384px, 100%);
+  background: var(--white);
+  border-radius: var(--radius);
+  border: var(--border);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--shadow-color);
+  padding: 24px;
+  display: grid;
+  gap: 16px;
+}
+
+/* Illustration */
+.thumb {
+  border-radius: 10px;
+  border: var(--border);
+  overflow: hidden;
+  line-height: 0; /* remove gap under inline images */
+}
+
+.thumb svg,
+.thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pill {
+  display: inline-block;
+  background: var(--yellow);
+  color: var(--gray-950);
+  font-weight: 800;
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: var(--border);
+}
+
+.meta {
+  font-size: var(--fs-meta);
+  color: var(--gray-950);
+  font-weight: 600;
+}
+
+.title {
+  margin: 0;
+  font-size: var(--fs-title);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.title a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+  transition: color var(--transition), text-shadow var(--transition);
+}
+
+.title a:hover,
+.title a:focus-visible {
+  color: var(--yellow);
+  text-shadow: 0 0 0 currentColor;
+}
+
+.desc {
+  margin: 0;
+  color: var(--gray-500);
+}
+
+.author {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.author img,
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: var(--border);
+  display: block;
+}
+
+.author-name {
+  font-weight: 800;
+  font-size: 14px;
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 3px dashed var(--gray-950);
+  outline-offset: 3px;
+}
+
+/* Motion‑safe improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+/* Small viewport adjustments */
+@media (max-width: 360px) {
+  .card {
+    padding: 20px;
+  }
+}
